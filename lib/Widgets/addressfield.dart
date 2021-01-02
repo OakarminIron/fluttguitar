@@ -179,7 +179,7 @@ class AddressFieldState extends State<AddressField> {
               obscureText: obscureText,
               autofocus: widget.autoFocus,
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                contentPadding: EdgeInsets.symmetric(horizontal: 0),
                 border: widget.backgroundColor != null
                     ? InputBorder.none
                     : widget.border,
@@ -188,11 +188,6 @@ class AddressFieldState extends State<AddressField> {
                     : null,
                 errorMaxLines: widget.errorMaxLines,
                 errorStyle: widget.errorStyle,
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color.fromARGB(255, 35, 250, 35),
-                  ),
-                ),
                 focusedBorder: widget.focusedBorder,
                 hintText:
                     widget.hasFloatingPlaceholder ? null : widget.hintText,

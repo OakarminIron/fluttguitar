@@ -25,15 +25,15 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'E Commerce Open Source App',
+        title: 'Guitar Store',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.yellow,
           primaryColor: const Color(0xFF009900),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: appRoutes,
-        initialRoute: '/',
+        initialRoute: '/login',
       ),
     );
   }
