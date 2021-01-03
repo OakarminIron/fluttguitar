@@ -1,16 +1,7 @@
 # fluttguitar
+This is a Flutter Project which is for a guitar shop
+I develop this project to fully flutter platform for both buyer and seller since our class decide to seprate seller frontend with other platform
+old project is intended for pharmacy , but mine is for guitar shop why not
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+you can study old code from my last commit before this app 
+https://github.com/linnhtetwin/Ecommerce-Open-Source-App/commit/f20b524a227b162cca7b191a54010fc76bd11642
