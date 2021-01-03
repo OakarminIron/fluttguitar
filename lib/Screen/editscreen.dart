@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import '../Model/dummyproducts.dart';
 import '../Model/product.dart';
 
-
 class EditScreen extends StatefulWidget {
   static const routeName = '/selleritem';
   @override
@@ -12,21 +11,20 @@ class EditScreen extends StatefulWidget {
 
 class _EditProductScreenState extends State<EditScreen> {
   final _nameFocusNode = FocusNode();
-  final _genericnameFocusNode = FocusNode();
+  final _descriptionFocusNode = FocusNode();
   final _priceFocusNode = FocusNode();
-
 
   final _form = GlobalKey<FormState>();
   var _x = Product(
     id: null,
     name: '',
-    genericname: '',
+    description: '',
     price: 0,
     imageUrl: '',
   );
   var _initValues = {
     'name': '',
-    'genericname': '',
+    'description': '',
     'price': '',
     'imageUrl': '',
   };
@@ -42,15 +40,15 @@ class _EditProductScreenState extends State<EditScreen> {
     if (_isInit) {
       final productId = ModalRoute.of(context).settings.arguments as String;
       if (productId != null) {
-        _x =
-            Provider.of<Dummyproducts>(context, listen: false).findById(productId);
+        _x = Provider.of<Dummyproducts>(context, listen: false)
+            .findById(productId);
         _initValues = {
           'name': _x.name,
-          'genericname': _x.genericname,
+          'description': _x.description,
           'price': _x.price.toString(),
-          'imageUrl': 'https://static-01.shop.com.mm/p/0cdfbfedc20f5efd589da860366cc313.jpg_200x200q75.jpg',
+          'imageUrl':
+              'https://static-01.shop.com.mm/p/ce59875ab3dbf5adc39726140b7a901f.jpg',
         };
-
       }
     }
     _isInit = false;
@@ -61,7 +59,7 @@ class _EditProductScreenState extends State<EditScreen> {
   void dispose() {
     _nameFocusNode.dispose();
     _priceFocusNode.dispose();
-    _genericnameFocusNode.dispose();
+    _descriptionFocusNode.dispose();
 
     super.dispose();
   }
@@ -114,25 +112,26 @@ class _EditProductScreenState extends State<EditScreen> {
                 },
                 onSaved: (value) {
                   _x = Product(
-                      id: _x.id,
-                      name: value,
-                      genericname: _x.genericname,
-                      price: _x.price,
+                    id: _x.id,
+                    name: value,
+                    description: _x.description,
+                    price: _x.price,
                     imageUrl:
-                    'https://static-01.shop.com.mm/p/0cdfbfedc20f5efd589da860366cc313.jpg_200x200q75.jpg',);
+                        'https://static-01.shop.com.mm/p/ce59875ab3dbf5adc39726140b7a901f.jpg',
+                  );
                 },
               ),
               TextFormField(
-                initialValue: _initValues['genericname'],
-                decoration: InputDecoration(labelText: 'Generic Name'),
+                initialValue: _initValues['description'],
+                decoration: InputDecoration(labelText: 'Description'),
                 keyboardType: TextInputType.multiline,
-                focusNode: _genericnameFocusNode,
+                focusNode: _descriptionFocusNode,
                 onFieldSubmitted: (_) {
-                  FocusScope.of(context).requestFocus(_genericnameFocusNode);
+                  FocusScope.of(context).requestFocus(_descriptionFocusNode);
                 },
                 validator: (value) {
                   if (value.isEmpty) {
-                    return 'Generic Name.';
+                    return 'Description.';
                   }
 
                   return null;
@@ -141,10 +140,11 @@ class _EditProductScreenState extends State<EditScreen> {
                   _x = Product(
                     id: _x.id,
                     name: _x.name,
-                    genericname: value,
+                    description: value,
                     price: _x.price,
                     imageUrl:
-                    'https://static-01.shop.com.mm/p/0cdfbfedc20f5efd589da860366cc313.jpg_200x200q75.jpg',);
+                        'https://static-01.shop.com.mm/p/ce59875ab3dbf5adc39726140b7a901f.jpg',
+                  );
                 },
               ),
               TextFormField(
@@ -173,9 +173,10 @@ class _EditProductScreenState extends State<EditScreen> {
                     id: _x.id,
                     name: _x.name,
                     price: int.parse(value),
-                    genericname: _x.genericname,
+                    description: _x.description,
                     imageUrl:
-                    'https://static-01.shop.com.mm/p/0cdfbfedc20f5efd589da860366cc313.jpg_200x200q75.jpg',);
+                        'https://static-01.shop.com.mm/p/ce59875ab3dbf5adc39726140b7a901f.jpg',
+                  );
                 },
               ),
               TextFormField(
@@ -184,15 +185,15 @@ class _EditProductScreenState extends State<EditScreen> {
                 onFieldSubmitted: (_) {
                   _saveForm();
                 },
-
                 onSaved: (value) {
                   _x = Product(
                     id: _x.id,
                     name: _x.name,
                     price: _x.price,
-                    genericname: _x.genericname,
+                    description: _x.description,
                     imageUrl:
-                    'https://static-01.shop.com.mm/p/0cdfbfedc20f5efd589da860366cc313.jpg_200x200q75.jpg',);
+                        'https://static-01.shop.com.mm/p/ce59875ab3dbf5adc39726140b7a901f.jpg',
+                  );
                 },
               ),
             ],

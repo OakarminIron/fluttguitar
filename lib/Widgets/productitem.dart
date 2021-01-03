@@ -23,7 +23,7 @@ class ProductItem extends StatelessWidget {
           child: Hero(
             tag: product.id,
             child: FadeInImage(
-              placeholder: AssetImage("images/placeholder.png"),
+              placeholder: AssetImage("lib/images/placeholder.png"),
               image: NetworkImage(product.imageUrl),
               fit: BoxFit.cover,
             ),

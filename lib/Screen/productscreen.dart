@@ -13,7 +13,7 @@ class Productscreen extends StatelessWidget {
     final productsData = Provider.of<Dummyproducts>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ဆိုင်ရှိဆေးများ'),
+        title: const Text('Guitars'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add),
@@ -29,18 +29,17 @@ class Productscreen extends StatelessWidget {
         child: ListView.builder(
           itemCount: productsData.items.length,
           itemBuilder: (_, i) => Column(
-                children: [
-                  Selleritem(
-                    productsData.items[i].id,
-                    productsData.items[i].name,
-                    productsData.items[i].genericname,
-                    productsData.items[i].price,
-                    productsData.items[i].imageUrl,
-
-                  ),
-                  Divider(),
-                ],
+            children: [
+              Selleritem(
+                productsData.items[i].id,
+                productsData.items[i].name,
+                productsData.items[i].description,
+                productsData.items[i].price,
+                productsData.items[i].imageUrl,
               ),
+              Divider(),
+            ],
+          ),
         ),
       ),
     );

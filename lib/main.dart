@@ -29,11 +29,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.yellow,
-          primaryColor: const Color(0xFF009900),
+          primaryColor: const Color(0xFF109099),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: appRoutes,
-        initialRoute: '/login',
+        initialRoute: '/overview',
       ),
     );
   }

@@ -23,7 +23,7 @@ class _SidebarState extends State {
       child: Column(
         children: <Widget>[
           AppBar(
-            title: Text("TMD Shop"),
+            title: Text("Guitar Shop"),
             automaticallyImplyLeading: false,
           ),
           Divider(),

@@ -25,7 +25,7 @@ class DetailScreen extends StatelessWidget {
               background: Hero(
                 tag: loadedProduct.id,
                 child: FadeInImage(
-                  placeholder: AssetImage("images/placeholder.png"),
+                  placeholder: AssetImage("lib/images/placeholder.png"),
                   image: NetworkImage(loadedProduct.imageUrl),
                   fit: BoxFit.cover,
                 ),
@@ -69,7 +69,7 @@ class DetailScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 10),
               width: double.infinity,
               child: Text(
-                loadedProduct.genericname,
+                loadedProduct.description,
                 textAlign: TextAlign.center,
                 softWrap: true,
               ),

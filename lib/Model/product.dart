@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class Product with ChangeNotifier {
   final String id;
   final String name;
-  final String genericname;
+  final String description;
   final int price;
   final String imageUrl;
 
@@ -11,7 +11,7 @@ class Product with ChangeNotifier {
   Product({
     @required this.id,
     @required this.name,
-    @required this.genericname,
+    @required this.description,
     @required this.price,
     @required this.imageUrl,
 

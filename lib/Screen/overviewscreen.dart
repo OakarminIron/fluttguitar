@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttguitar/Model/dummyproducts.dart';
 import 'package:provider/provider.dart';
 import '../Widgets/products_grid.dart';
 import '../Widgets/badge.dart';
@@ -13,11 +14,35 @@ class Overviewscreen extends StatefulWidget {
 }
 
 class _OverviewScreenState extends State<Overviewscreen> {
+  var _isInit = true;
+  var _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isLoading = true;
+      });
+      Provider.of<Dummyproducts>(context).fetchAndSetProducts().then((_) {
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TMD Pharmacy'),
+        title: Text('Guitar Shop'),
         actions: <Widget>[
           Consumer<Cart>(
             builder: (_, cart, ch) => Badge(
@@ -36,7 +61,11 @@ class _OverviewScreenState extends State<Overviewscreen> {
         ],
       ),
       drawer: Sidebar(),
-      body: ProductsGrid(),
+      body: _isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ProductsGrid(),
     );
   }
 }
