@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import './Model/dummyproducts.dart';
 import './Model/cart.dart';
 import './Model/checkout.dart';
+import './Model/auth.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
@@ -20,9 +21,23 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Cart(),
         ),
-        ChangeNotifierProvider.value(
-          value: Checkout(),
+
+       /* ChangeNotifierProvider<Auth>(create: (_) => Auth()),
+ 
+
+        ChangeNotifierProxyProvider<Auth, Checkout>(
+          create: (BuildContext context) => Checkout(
+            (Provider.of<Auth>(context, listen: false)),
+            (Provider.of<Auth>(context, listen: false)),
+            (Provider.of<Auth>(context, listen: false)),
+          ),
+          update: (ctx, auth, previousOrders) => Checkout(
+            auth.token,
+            auth.userId,
+            previousOrders == null ? [] : previousOrders.checkout,
+          ),
         ),
+        */
       ],
       child: MaterialApp(
         title: 'Guitar Store',

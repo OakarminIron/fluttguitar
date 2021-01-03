@@ -80,7 +80,7 @@ class _EditProductScreenState extends State<EditScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Product'),

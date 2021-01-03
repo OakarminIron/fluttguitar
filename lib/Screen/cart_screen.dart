@@ -8,7 +8,7 @@ class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
@@ -54,14 +54,7 @@ class CartScreen extends StatelessWidget {
                   ),
                   FlatButton(
                     child: Text('Checkout'),
-                    onPressed: () {
-                      Provider.of<Checkout>(context, listen: false).checkoutnow(
-                        cart.items.values.toList(),
-                        cart.totalAmount,
-                      );
-                      cart.clear();
-                      Navigator.of(context).pushReplacementNamed('/checkout');
-                    },
+                    onPressed:null,
                   )
                 ],
               ),

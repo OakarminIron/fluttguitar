@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
   static const routeName = '/login';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final deviceSize = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
@@ -151,7 +151,7 @@ class _AuthCardState extends State<AuthCard> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final deviceSize = MediaQuery.of(context).size;
     return Card(
       shape: RoundedRectangleBorder(

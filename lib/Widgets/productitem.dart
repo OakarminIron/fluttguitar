@@ -7,7 +7,7 @@ import '../Model/cart.dart';
 
 class ProductItem extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final product = Provider.of<Product>(context, listen: false);
     final cart = Provider.of<Cart>(context, listen: false);
     return ClipRRect(

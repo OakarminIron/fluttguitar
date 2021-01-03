@@ -7,7 +7,7 @@ class DetailScreen extends StatelessWidget {
   static const routeName = '/detailscreen';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final productId = ModalRoute.of(context).settings.arguments as String;
     final loadedProduct = Provider.of<Dummyproducts>(
       context,

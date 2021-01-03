@@ -9,7 +9,7 @@ class Productscreen extends StatelessWidget {
   static const routeName = '/productscreen';
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final productsData = Provider.of<Dummyproducts>(context);
     return Scaffold(
       appBar: AppBar(

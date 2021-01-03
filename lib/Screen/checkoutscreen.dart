@@ -6,7 +6,7 @@ import '../Widgets/checkoutwidget.dart';
 class CheckoutScreen extends StatelessWidget {
   static const routeName = '/checkout';
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final cData = Provider.of<Checkout>(context);
     return Scaffold(
       appBar: AppBar(

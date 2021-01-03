@@ -5,7 +5,7 @@ import '../Widgets/productitem.dart';
 
 class ProductsGrid extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     final productsData = Provider.of<Dummyproducts>(context);
     final products = productsData.items;
     return Column (children: <Widget>[

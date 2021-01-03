@@ -16,7 +16,7 @@ class Selleritem extends StatelessWidget {
   Selleritem(this.id, this.name, this.genericname,this.price, this.imageUrl);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build( context) {
     return ListTile(
       title: Text(name),
       subtitle: Text(genericname),
